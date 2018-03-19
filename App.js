@@ -26,17 +26,17 @@ var Chat = (function () {
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////send message and serch for word///////////////
-let message = []
+/* let message = []
 
 function ChatMessage(message, user) {
   this.message = messages
   this.user = users
   this.createdAt = new Date()
 
-let newMessage1 = new ChaMessage('Hello World!', 'Sonia')
-let newMessage2 = new ChaMessage('Hello Hello', 'Sonia')
-let newMessage3 = new ChaMessage('Hello', 'Sonia')
-let newMessage4 = new ChaMessage('2', 'Sonia')
+let newMessage1 = new ChatMessage('Hello World!', 'Sonia')
+let newMessage2 = new ChatMessage('Hello Hello', 'Sonia')
+let newMessage3 = new ChatMessage('Hello', 'Sonia')
+let newMessage4 = new ChatMessage('2', 'Sonia')
 }
 message.push(newMessage1)
 message.push(newMessage2)
@@ -55,13 +55,17 @@ let results = messages.filter(m=> {
   // let keywords = keyword.split('')
   return m.message.indexOf(keyword) !== -1
 
-  //search function with lowercase and uppercase letters. DOES NOT WORK!
+let results = users.filter(u=> { //Did something
+
+  return u.users.indexOf(keyword) !== -1 //Did something
+
+  //search function with lowercase and uppercase letters. DOES NOT WORK!////////////////////////////
   let searchBar = document.forms['search-users'].querySelector("#myInput");
   searchBar.addEventListener('keyup',function(e){
     let term = e.target.value.toLowerCase(); //Now we are comparing lowercase latters to lowercase letters.
-  //now I want to go trhough the array of authors and compare it with the searchBar
+  //now I want to go trhough the array of authors/users and compare it with the searchBar
   const authors = users.getElementsByTagName('li');
-  //Now we want to know if the searchterm is contained with the titels of the authors, by turning this into an array:
+  //Now we want to know if the searchterm is contained with the titels of the authors/users, by turning this into an array:
   Array.from(users).forEach(function(user){
     let message = users.firstElementChild.textContent;
     //Now we want to check if the term is in the message
@@ -71,14 +75,17 @@ let results = messages.filter(m=> {
     } else {
       user.style.display = 'none';
     }
+    ///////////////////////////////////////////////////////////////////////////////////////////////
+
+})
 
 })
 
 console.log('Message results', results)
 
-})
+}) */
 
-// Censor messages containing certain words
+// Censor messages containing certain words////////////////////////////////////
 let messages = ['shit']
 
 module.sendChat = function (message) {
@@ -119,4 +126,4 @@ function logout(){
   console.log('leaving chat');
 }
 
-})
+// })
