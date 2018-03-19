@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <link rel=”stylesheet” href=”bootstrap.css”>
         <meta charset="utf-8">
-        <title>WebSockets - Simple chat</title>
+        <title>Chat</title>
 
         <style>
         * { font-family:tahoma; font-size:12px; padding:0px; margin:0px; }
@@ -18,7 +19,8 @@
     </head>
     <body>
       <!-- Search function starts here -->
-      <div><input type="text" id="myInput" keyup="myFunction()" placeholder="Search by content or author.."></div>
+      <div name="search-users"> <input type="text" id="myInput" keyup="myFunction()" placeholder="Search by content or author..">
+      </div>
       <!-- Search function ends here -->
       <!--Logout starts here-->
        <div><a href="javascript:logout();">Leave chat</a></div>
@@ -31,7 +33,6 @@
   </form>
   <input type="text" id="input" keyup="myFunction" />
 </div>
-
         <script src="./App.js"></script>
     </body>
 </html>

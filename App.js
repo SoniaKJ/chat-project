@@ -26,7 +26,7 @@ var Chat = (function () {
 
 //////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////send message and serch for word///////////////
-/* let message = []
+ let message = []
 
 function ChatMessage(message, user) {
   this.message = messages
@@ -75,7 +75,7 @@ let results = users.filter(u=> { //Did something
     } else {
       user.style.display = 'none';
     }
-    ///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 
 })
 
@@ -83,10 +83,10 @@ let results = users.filter(u=> { //Did something
 
 console.log('Message results', results)
 
-}) */
+})
 
 // Censor messages containing certain words////////////////////////////////////
-let messages = ['shit']
+let messages = ['shit', 'crap'], message // will not censor all the message, but only the word
 
 module.sendChat = function (message) {
   console.log ('A message is written:', message)
@@ -107,6 +107,7 @@ if(badWordInMessage) {
 }
 }
 
+
 return module
 
 })()
@@ -116,7 +117,8 @@ Chat.joinChat('Tanja');
 
 Chat.sendChat('Hello');
 Chat.sendChat('shit');
-Chat.sendChat('Ashit');
+Chat.sendChat('You are a shit');
+Chat.sendChat('crap');
 
 //Chat.sendMessage('Hallo, my name is Sonia');
 
@@ -126,4 +128,4 @@ function logout(){
   console.log('leaving chat');
 }
 
-// })
+})
