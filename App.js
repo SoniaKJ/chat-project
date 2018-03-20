@@ -8,12 +8,12 @@ var Chat = (function () {
 
    console.log ('User is trying to join:', user)
 
- let userAlreadyConnected = false
+   let userAlreadyConnected = false
 
-  for (let i = 0; i < users.length; i++) {
+   for (let i = 0; i < users.length; i++) {
     //check if the user who is joining already is connected
-    if (users[i] == user) {
-     userAlreadyConnected = true
+     if (users[i] == user) {
+      userAlreadyConnected = true
   }
  }
 
@@ -32,12 +32,13 @@ function ChatMessage(message, user) {
   this.message = messages
   this.user = users
   this.createdAt = new Date()
+  }
 
 let newMessage1 = new ChatMessage('Hello World!', 'Sonia')
 let newMessage2 = new ChatMessage('Hello Hello', 'Sonia')
 let newMessage3 = new ChatMessage('Hello', 'Sonia')
 let newMessage4 = new ChatMessage('2', 'Sonia')
-}
+
 message.push(newMessage1)
 message.push(newMessage2)
 message.push(newMessage3)
@@ -54,12 +55,12 @@ let results = messages.filter(m=> {
   // does this current message match whan i'm looking for?
   // let keywords = keyword.split('')
   return m.message.indexOf(keyword) !== -1
+})
+ let results = users.filter(u=> { //Did something
 
-let results = users.filter(u=> { //Did something
+ return u.users.indexOf(keyword) !== -1 //Did something
 
-  return u.users.indexOf(keyword) !== -1 //Did something
-
-  //search function with lowercase and uppercase letters. DOES NOT WORK!////////////////////////////
+/*  //search function with lowercase and uppercase letters. DOES NOT WORK!////////////////////////////
   let searchBar = document.forms['search-users'].querySelector("#myInput");
   searchBar.addEventListener('keyup',function(e){
     let term = e.target.value.toLowerCase(); //Now we are comparing lowercase latters to lowercase letters.
@@ -75,7 +76,7 @@ let results = users.filter(u=> { //Did something
     } else {
       user.style.display = 'none';
     }
-  ///////////////////////////////////////////////////////////////////////////////////////////////
+*/  ///////////////////////////////////////////////////////////////////////////////////////////////
 
 })
 
@@ -86,21 +87,21 @@ console.log('Message results', results)
 })
 
 // Censor messages containing certain words////////////////////////////////////
-let messages = ['shit', 'crap'], message // will not censor all the message, but only the word
+let badWords = ['shit', 'crap'] // will not censor all the message, but only the word. Change to badword.
 
-module.sendChat = function (message) {
+module.sendChat = function (chatMessage) {
   console.log ('A message is written:', message)
 //check if bad word is in massage
-let badWordInMessage = false
+let censor = false
 
-  for (let i = 0; i < messages.length; i++) {
-    if (messages[i] == message) {
-        badWordInMessage = true
+for (let i = 0; i < badWords.length; i++) {
+    if (chatMessage.message.indexOf(badWords[i]) != -1) {
+        censor = true
     }
   }
 
 //if not, push the message
-if(badWordInMessage) {
+if(censor) {
   console.log('message cannot contain bad words: ', message)
 } else {
   messages.push(message)
